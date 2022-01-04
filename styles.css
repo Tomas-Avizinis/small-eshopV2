@@ -18,7 +18,7 @@ body {
     background-color: #dddddd;
     display: flex;
     flex-direction: column;
-    justify-content: start;
+    justify-content: space-between;
     align-items: center;
     border-radius: 8px;
     padding:10px;
