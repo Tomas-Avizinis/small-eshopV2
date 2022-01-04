@@ -84,13 +84,13 @@ let myMoney=200;
 let myWeight=30;
 
 const fullScreen=document.querySelector('.main-container')! as HTMLBodyElement;
-console.log(fullScreen);
 const products=document.querySelector('#shop-products')! as HTMLDivElement;
 const inventory=document.querySelector('#my-products')! as HTMLDivElement;
 
 const moneyDIV=document.querySelector('#money')! as HTMLDivElement;
 const weightDIV=document.querySelector('#weight')! as HTMLDivElement;
 
+const categoryButtons :NodeListOf<HTMLButtonElement> =document.querySelectorAll('button.category');
 const addItemBtn=document.querySelector('#add-to-shop')! as HTMLButtonElement;
 
 addItemBtn.onclick=()=>{
@@ -100,9 +100,8 @@ addItemBtn.onclick=()=>{
 
 
 const displayResources= ()=>{
-    console.log(moneyDIV, weightDIV);
     moneyDIV.textContent='Money: '+ myMoney;
-    weightDIV.textContent='Weight limt: ' + myWeight;
+    weightDIV.textContent='Weight limit: ' + myWeight;
 }
 
 
@@ -155,6 +154,8 @@ function display (items: itemType[]) {
 
                 removeItemBtn.onclick=()=>{
                     purchasedItem.remove();
+
+                    //grazinti pinigus uz daikta pasalinta is inventory
                     myMoney = parseFloat((myMoney + item.price).toFixed(2));
                     myWeight = parseFloat((myWeight + item.weight).toFixed(2));
                     displayResources();
@@ -169,10 +170,9 @@ function display (items: itemType[]) {
     })
 }
 
-//pradzioje rodo visus produktus
+//pradzioje rodo visus (nefiltruotus) produktus
 display(items);
 
-const categoryButtons :NodeListOf<HTMLButtonElement> =document.querySelectorAll('button.category') ;
 
 categoryButtons.forEach((button, index:number)=> {
     button.onclick=()=>{
