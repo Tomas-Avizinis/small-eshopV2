@@ -226,11 +226,6 @@ const showInputModal=()=> {
     submitBtn.textContent='Add product to shop';
 
     submitBtn.onclick=()=>{
-        console.log(nameInput.value);
-        console.log(photoInput.value);
-        console.log(weightInput.value);
-        console.log(priceInput.value);
-        console.log(categoryInput.value);
 
         if (nameInput.value && photoInput.value && weightInput.value && priceInput.value && categories.includes(categoryInput.value)) {
             console.log('visi langai OK.');
