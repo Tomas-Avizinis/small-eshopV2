@@ -85,7 +85,7 @@ addItemBtn.onclick = () => {
 };
 const displayResources = () => {
     moneyDIV.textContent = 'Money: ' + myMoney;
-    weightDIV.textContent = 'Weight limit: ' + myWeight;
+    weightDIV.textContent = 'Weight limit:  ' + myWeight;
 };
 const filteredItems = (arr, categoryName) => {
     const newArr = arr.filter(item => item.category == categoryName);
