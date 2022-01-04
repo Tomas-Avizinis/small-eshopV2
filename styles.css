@@ -71,6 +71,7 @@ button#add-to-shop {
 .products {
     width: 95%;
     overflow: auto;
+    height:100%;
 
 }
 
